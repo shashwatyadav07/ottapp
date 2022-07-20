@@ -1,38 +1,356 @@
+@import "react-alice-carousel/lib/alice-carousel.css";
+
+
+* {
+  scroll-behavior: smooth;
+  color: #f2f8f9;
+}
+
+body {
+  color: #f2f8f9;
+  background-image: url("./Images/movie.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
 .App {
-  text-align: center;
+  margin-bottom: 3.5rem;
+  background-image: url("./Images/movie.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(rgb(204, 204, 207), rgb(202, 59, 59));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heading3 {
+  background: -webkit-linear-gradient(rgb(201, 198, 200), rgb(211, 61, 153));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/******************************************Home.js**********************************************************/
+.carousel-item {
+  position: relative;
+}
+.carousel .main-img {
+  margin-top: -.3rem;
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  filter: brightness(30%);
+}
+.main-card {
+  width: 60%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: none;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+.main-card:hover {
+  border: none !important;
+}
+.text-div {
+  text-align: left;
+}
+.text-div h2 {
+  font-size: 2.2rem;
+  margin-top: -1rem;
+}
+.text-div p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 980px) {
+  .text-div h2 {
+    font-size: 1.6rem !important;
+  }
+  .text-div p {
+    font-size: 1rem !important;
+  }
+  .main-card {
+    width: 70%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 768px) {
+  .main-card .img-fluid {
+    height: 18rem;
+    width: 75%;
+    margin-left: 12%;
+  }
+  .text-div {
+    text-align: center;
+  }
+  .text-div h2 {
+    font-size: 1.5rem;
+  }
+  .text-div .overview {
+    display: none;
+  }
+  .text-div p {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-card .img-fluid {
+    height: 16rem;
+  }
+  .text-div h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.home-div {
+  width: 98% !important;
+}
+.see-more-btn {
+  float: right;
+  margin-top: -2rem;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+  border-radius: 15px;
+}
+.movie {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  object-fit: contain;
+  padding: 8px;
+  text-align: center;
+}
+.movie img {
+  border-radius: 13px;
+  box-shadow: 0 0 7px black;
 }
 
-.App-link {
-  color: #61dafb;
+.movie:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 2px 2px 8px rgba(155, 74, 74, 0.7);
+  border-right: 1px solid rgba(155, 74, 74, 0.7);
+  border-bottom: 1px solid rgba(155, 74, 74, 0.7);
+}
+.navigation {
+  position: absolute;
+  top: 30%;
+  border: none;
+  cursor: pointer;
+  color: rgb(129, 127, 127);
+}
+.navigation:hover {
+  color: #080808;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+/**********************************************Head.js*****************************************************/
+/* .header {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  z-index: 100;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+} */
+
+.demo {
+  position: fixed !important;
+  top: 0 !important;
+}
+/* .header:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+.header:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 5px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+} */
+
+.header h1 {
+  margin-top: .3rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  /* background: linear-gradient(to right,#095fab 10%, #25abe8 50%, #57d75b 60%); */
+  background: linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1.5s linear infinite;
+  display: inline-block;
+}
+@keyframes textclip {
   to {
-    transform: rotate(360deg);
+    background-position: 200% center;
   }
+}
+
+.head {
+  /* rgba(255,255,255,0.5) */
+  background-color: rgba(129, 124, 124, 0.6);
+}
+
+/**************************************************NavBar******************************************/
+.cont {
+  position: fixed;
+  bottom: 0;
+}
+
+/***************************************************Card***********************************************/
+.singlemovie-card p {
+  font-size: 1.1rem;
+}
+.card-title {
+  background: -webkit-linear-gradient(rgb(201, 198, 200), rgb(211, 61, 153));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.singlemovie-card .badge span {
+  font-size: 0.9rem;
+}
+.singlemovie-card .badge {
+  padding: 4px 6px;
+  background-color: #226324;
+}
+.singlemovie-card {
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  z-index: 0;
+  border: none;
+}
+.singlemovie-card:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 2px 2px 13px rgba(155, 74, 74, 0.7);
+  border-right: 1px solid rgba(155, 74, 74, 0.7);
+  border-bottom: 1px solid rgba(155, 74, 74, 0.7);
+}
+.singlemovie-card:hover:before {
+  transform: scale(2.15);
+}
+
+/**************************************IndividualMovie***********************************************/
+.individualmovie {
+  width: 75%;
+  padding-top: 4.5rem;
+  padding-bottom: 1rem;
+}
+.mainimg {
+  min-height: 400px;
+  width: 85%;
+  height: 470px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.3em;
+  object-fit: cover;
+}
+.video {
+  margin-top: 1rem;
+  width: 100%;
+  height: 400px;
+}
+
+@media (max-width: 1100px) {
+  .mainimg {
+    width: 100%;
+  }
+  .individualmovie {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .individualmovie {
+    width: 93%;
+  }
+}
+
+/*****************************************Cast Carousal***************************************************/
+.actor {
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  padding: 8px;
+  text-align: center;
+}
+.actor img {
+  border-radius: 13px;
+  box-shadow: 0 0 7px black;
+}
+.navigation {
+  position: absolute;
+  top: 30%;
+  border: none;
+  cursor: pointer;
+  color: rgb(129, 127, 127);
+}
+.navigation:hover {
+  color: #080808;
+}
+
+/**************************************************Pages**********************************************/
+.movies,
+.tvseries,
+.trending {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+/********************************************Chip *******************************************************/
+.chip {
+  margin: 3px !important;
+  border: 0.125rem solid #f2f8f9 !important;
+}
+.chip:hover {
+  background-color: rgb(119, 115, 115) !important;
+}
+
+/*******************************************Search.js*************************************************/
+.search {
+  padding-top: 4.8rem;
+}
+.input-text {
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid #f2f8f9;
+  color: #f2f8f9;
+  border-radius: 6px;
 }
