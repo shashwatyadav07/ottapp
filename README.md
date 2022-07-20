@@ -12,7 +12,7 @@ Some salient features of this project are.....
 To run the application....
 1. run 'npm install' (to get all required dependencies in node_modules folder)
 2. generate the TMDB API key (to fetch real time data from TMDB)
-3. save generated API key in .env file with syntax as REACT_APP_API_KEY = <key>
+3. save generated API key in .env file with syntax as REACT_APP_API_KEY = key
 4. run 'npm start' (to run the application)
 
 
