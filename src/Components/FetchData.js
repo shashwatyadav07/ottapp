@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import AliceCarousel from 'react-alice-carousel';
 import { img300 } from '../Configuration';
 import NotAvailable from '../Images/NotAvailable.jpg';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import { Link } from 'react-router-dom';
 
 const FetchData = ({ url, head }) => {
@@ -31,9 +29,7 @@ const FetchData = ({ url, head }) => {
         0: {
             items: 3,
         },
-        // 422: {
-        //     items: 4,
-        // },
+        
         600: {
             items: 5,
         },
@@ -58,14 +54,14 @@ const FetchData = ({ url, head }) => {
     return (
         data.length !== 0 && <div className="home-div px-4 mx-auto">
             <h3 className="heading3">{head}</h3>
-            <Link to={`/homeadditional/${head}`} state={{ url }}><button className="btn btn-outline-primary see-more-btn">See More</button></Link>
+           
             <AliceCarousel mouseTracking items={items} responsive={row_items} disableDotsControls
                 animationType='fadeout'
                 renderPrevButton={() => {
-                    return <span className="navigation" style={{ left: "-2rem" }}>{<NavigateBeforeIcon style={{ fontSize: "3rem" }} />}</span>
+                    return <span className="navigation" style={{ left: "-2rem" }}></span>
                 }}
                 renderNextButton={() => {
-                    return <span className="navigation" style={{ right: "-2.2rem" }}>{<NavigateNextIcon style={{ fontSize: "3rem" }} />}</span>
+                    return <span className="navigation" style={{ right: "-2.2rem" }}></span>
                 }}
             />
         </div>
